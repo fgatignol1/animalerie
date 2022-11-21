@@ -1,0 +1,19 @@
+{% extends 'animalerie/base.html' %}
+load static
+{% block content %}
+
+
+    {% for Animal in animals %}
+        <div class="id_animal">
+            <h2><a href="{% url 'animal_detail' Animal.id_animal %}">{{ Animal.id_animal }}</a> </h2>
+            <p> {{ Animal.etat }} <p/>
+            <p>{{ Animal.type }}</p>
+            <p>{{ Animal.race }}</p>
+            <p> {{ Animal.lieu }} <p/>
+            <img src={{ Animal.photo }} height="128u"/>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+
+
